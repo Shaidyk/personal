@@ -16,8 +16,8 @@ def info(request):
     return HttpResponse(
         f"""
         <html>
-            <body>
-                <h2 style="color: blue"> {datetime.datetime.today()}</h2>
+            <body style="background-color: green">
+                <h1 style="color: blue"> {datetime.datetime.today()}</h1>
             </body>
         </html>
         """)
