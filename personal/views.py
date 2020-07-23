@@ -16,8 +16,28 @@ def info(request):
     return HttpResponse(
         f"""
         <html>
-            <body style="background-color: green">
-                <h1 style="color: blue"> {datetime.datetime.today()}</h1>
+            <body style="background-color: gray">
+                <h1 style="color: blue"> Now is {datetime.datetime.now()}</h1>
             </body>
         </html>
         """)
+
+
+def main_page(request):
+    return HttpResponse(
+        f"""
+            <html>
+                <body style="background-color: green">
+                    <b>
+                    <div>
+                        <a style="color: yellow" href=/admin/> Admin </a>  
+                    </div>
+                    <div>
+                        <a style="color: yellow" href=/info-page/> Info-page </a>
+                    </div>
+                    <div>
+                        <a style="color: yellow" href=/hello/> Hello </a>
+                    </div>
+                </body>
+            </html>
+            """)
