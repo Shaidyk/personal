@@ -30,7 +30,7 @@ class Courier(models.Model):
 class MenuItem(models.Model):
     """Позиция в меню"""
     name = models.CharField(max_length=150)
-    price = models.TextField(max_length=1000)
+    price = models.DecimalField(decimal_places=2)  # цена
 
 
 class Order(models.Model):
@@ -47,3 +47,4 @@ class OrderItem(models.Model):
     """Позиция меню в заказе"""
     menuitem = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    amount = models.FloatField()  # цена
