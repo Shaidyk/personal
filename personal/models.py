@@ -3,38 +3,38 @@ import datetime
 
 
 class Client(models.Model):
-    """Клиент"""
+    """Client"""
     first_name = models.CharField(max_length=100)
     phone = models.PositiveIntegerField()
 
 
 class Region(models.Model):
-    """Район"""
+    """Region"""
     name = models.CharField(max_length=200)
 
 
 class Restaurant(models.Model):
-    """Ресторан"""
+    """Restaurant"""
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
 
 class Courier(models.Model):
-    """Курьер"""
+    """Courier"""
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
 
 class MenuItem(models.Model):
-    """Позиция в меню"""
+    """Position in menu"""
     name = models.CharField(max_length=150)
-    price = models.DecimalField(max_digits=10, decimal_places=2)  # цена
+    price = models.DecimalField(max_digits=10, decimal_places=2)
 
 
 class Order(models.Model):
-    """Закакз"""
+    """Order"""
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
@@ -44,7 +44,7 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    """Позиция меню в заказе"""
+    """Position menu in order"""
     menuitem = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    amount = models.FloatField()  # количество
+    amount = models.FloatField(default=0)  # count
