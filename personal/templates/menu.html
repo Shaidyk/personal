@@ -8,14 +8,20 @@
     {% include "header.html" %}
 </header>
 <body>
-    <table>
-
-        <th class="Category">meet</th>
-
+    <table border="2">
+        <tr>
+            <th style="border: 2px solid">id</th>
+            <th style="border: 2px solid">name</th>
+        </tr>
+        <tr>
+            {% for menu_item in menu_items %}
+                <tr>
+                    <th style="border: 2px solid">{{menu_item.id}}</th>
+                    <th style="border: 2px solid">{{menu_item.name}}</th>
+                </tr>
+            {%endfor%}
+        </tr>
     </table>
-    <div>
-        <a style="background-color: yellow" href="/"> Main-page </a>
-    </div>
 </body>
 <footer>
     {% include "footer.html" %}
