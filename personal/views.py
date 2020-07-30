@@ -22,6 +22,7 @@ def info(request):
     return HttpResponse(
         f"""
         <html>
+            <header></header>
             <body style="background-color: gray">
                 <h1 style="color: blue"> Now is {datetime.datetime.now()}</h1>
                 <a style="color: yellow" href=/> "Main-page" </a>

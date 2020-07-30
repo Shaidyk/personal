@@ -1,5 +1,4 @@
 from django.db import models
-import datetime
 
 
 class Client(models.Model):
@@ -28,14 +27,15 @@ class Courier(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=150)
+    """Category"""
+    name = models.CharField(max_length=100, null=True)
 
 
 class MenuItem(models.Model):
     """Position in menu"""
     name = models.CharField(max_length=150)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 
 
 class Order(models.Model):

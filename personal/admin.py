@@ -23,6 +23,11 @@ class CourierAdmin(ModelAdmin):
     pass
 
 
+@register(models.Category)
+class CategoryAdmin(ModelAdmin):
+    pass
+
+
 @register(models.MenuItem)
 class MenuItemAdmin(ModelAdmin):
     pass
