@@ -1,5 +1,10 @@
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 import datetime
+
+
+class Menu(TemplateView):
+    template_name = "menu.html"
 
 
 def hello(request):
@@ -39,6 +44,9 @@ def main_page(request):
                     </div>
                     <div>
                         <a style="color: yellow" href="/hello/"> Hello </a>
+                    </div>
+                    <div>
+                        <a style="color: yellow" href="/menu/"> Menu </a>
                     </div>
                 </body>
             </html>

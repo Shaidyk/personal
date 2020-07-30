@@ -27,10 +27,15 @@ class Courier(models.Model):
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=150)
+
+
 class MenuItem(models.Model):
     """Position in menu"""
     name = models.CharField(max_length=150)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
 class Order(models.Model):
@@ -48,3 +53,5 @@ class OrderItem(models.Model):
     menuitem = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     amount = models.FloatField(default=0)  # count
+
+
