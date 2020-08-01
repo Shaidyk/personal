@@ -27,18 +27,27 @@ def hello(request):
         """)
 
 
-def info(request):
-    return HttpResponse(
-        f"""
-        <html>
-            <header></header>
-            <body style="background-color: gray">
-                <h1 style="color: blue"> Now is {datetime.datetime.now()}</h1>
-                <a style="color: yellow" href=/> "Main-page" </a>
-            </body>
-        </html>
-        """)
+# def info(request):
+#     return HttpResponse(
+#         f"""
+#         <html>
+#             <header></header>
+#             <body style="background-color: gray">
+#                 <h1 style="color: blue"> Now is {datetime.datetime.now()}</h1>
+#                 <a style="color: yellow" href=/> "Main-page" </a>
+#             </body>
+#         </html>
+#         """)
 
+
+class InfoView(TemplateView):
+    template_name = "info.html"
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            "info_times": datetime.datetime.now()
+        }
+        return render(request, self.template_name, context)
 
 
 def main_page(request):
