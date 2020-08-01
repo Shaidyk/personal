@@ -40,24 +40,6 @@ def info(request):
         """)
 
 
+
 def main_page(request):
-    return HttpResponse(
-        """
-            <html>
-                <body style="background-color: green">
-                    <b>
-                    <div>
-                        <a style="color: yellow" href="/admin/"> Admin </a>  
-                    </div>
-                    <div>
-                        <a style="color: yellow" href="/info-page/"> Info-page </a>
-                    </div>
-                    <div>
-                        <a style="color: yellow" href="/hello/"> Hello </a>
-                    </div>
-                    <div>
-                        <a style="color: yellow" href="/menu/"> Menu </a>
-                    </div>
-                </body>
-            </html>
-        """)
+    return render(request, "main.html")
