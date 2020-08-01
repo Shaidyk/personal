@@ -27,25 +27,12 @@ def hello(request):
         """)
 
 
-# def info(request):
-#     return HttpResponse(
-#         f"""
-#         <html>
-#             <header></header>
-#             <body style="background-color: gray">
-#                 <h1 style="color: blue"> Now is {datetime.datetime.now()}</h1>
-#                 <a style="color: yellow" href=/> "Main-page" </a>
-#             </body>
-#         </html>
-#         """)
-
-
 class InfoView(TemplateView):
     template_name = "info.html"
 
     def get(self, request, *args, **kwargs):
         context = {
-            "info_times": datetime.datetime.now()
+            "info_times": datetime.datetime.now().strftime("%d %b %Y, %H:%M:%S")
         }
         return render(request, self.template_name, context)
 
