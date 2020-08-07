@@ -2,16 +2,32 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.shortcuts import render
 import datetime
-from .models import Category, Order
+from .models import Category, MenuItem
 
 
 class MenuView(TemplateView):
     template_name = "menu.html"
 
+    # def get(self, request, *args, **kwargs):
+    #     context = {
+    #         'menu_items': MenuItem.objects.all()
+    #     }
+    #     return render(request, self.template_name, context)
+
     def get(self, request, *args, **kwargs):
+        # queryset = MenuItem.objects.annotate(category=Category('name'))
+
+        queryset = MenuItem.objects.all()
+
+        filter_name = request.GET.get('filter')
+        # if True:
+        queryset = queryset.filter(category__name=filter_name)
+        # queryset = queryset.order_by('category')
+
         context = {
-            'menu_items': Category.objects.all()
+            'menu_items': queryset
         }
+
         return render(request, self.template_name, context)
 
 
