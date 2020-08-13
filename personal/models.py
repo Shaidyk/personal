@@ -6,16 +6,16 @@ class Client(models.Model):
     first_name = models.CharField(max_length=100)
     phone = models.PositiveIntegerField()
 
-    # def __str__(self):
-    #     return f"Client name: {self.first_name}. Phone: {self.phone}"
+    def __str__(self):
+        return f"Client name: {self.first_name}. Phone: {self.phone}"
 
 
 class Region(models.Model):
     """Region"""
     name = models.CharField(max_length=200)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
 
 
 class Restaurant(models.Model):
@@ -24,8 +24,8 @@ class Restaurant(models.Model):
     address = models.CharField(max_length=200)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return f"Restaurant: {self.name}. Region:{self.region}"
+    def __str__(self):
+        return f"Restaurant: {self.name}. Region:{self.region}"
 
 
 class Courier(models.Model):
@@ -34,16 +34,16 @@ class Courier(models.Model):
     last_name = models.CharField(max_length=100)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return f"Courier name: {self.first_name}, Courier last name - {self.last_name}"
+    def __str__(self):
+        return f"Courier name: {self.first_name}, Courier last name - {self.last_name}"
 
 
 class Category(models.Model):
     """Category"""
     name = models.CharField(max_length=100, null=True)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
 
 
 class MenuItem(models.Model):
@@ -53,8 +53,8 @@ class MenuItem(models.Model):
     # currency = models.CharField(max_length=10, default="₴")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 
-    # def __str__(self):
-    #     return f"{self.name}. {self.price}₴"
+    def __str__(self):
+        return f"{self.category}: {self.name}. {self.price}₴"
 
 
 class Order(models.Model):
@@ -66,8 +66,8 @@ class Order(models.Model):
     delivery_time = models.DateTimeField()
     delivered_at = models.DateTimeField()
 
-    # def __str__(self):
-    #     return f"{self.client}, {self.restaurant}, {self.courier}"
+    def __str__(self):
+        return f"{self.client}, {self.restaurant}, {self.courier}"
 
 
 class OrderItem(models.Model):
@@ -76,5 +76,5 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     amount = models.FloatField(default=0)  # count
 
-    # def __str__(self):
-    #     return f"Menu Item{self.menuitem}. Order = {self.order}. Amount{self.amount}"
+    def __str__(self):
+        return f"Menu Item{self.menuitem}. Order = {self.order}. Amount{self.amount}"
