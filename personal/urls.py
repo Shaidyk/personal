@@ -1,26 +1,24 @@
-"""personal URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 
-from .views import hello, info, main_page
+from .views import *
+
+from rest_framework import routers
+
+router = routers.SimpleRouter()
+
+router.register('clients', ClientViewSet, basename='clients')
+router.register('restaurants', RestaurantViewSet, basename='restaurants')
+router.register('couriers', CourierViewSet, basename='couriers')
+router.register('regions', RegionViewSet, basename='regions')
+router.register('menu_item', MenuItemViewSet, basename='menu_item')
+router.register('order', OrderViewSet, basename='order')
+router.register('courier_order', CourierOrderViewSet, basename='courier_order')
 
 urlpatterns = [
-    path('', main_page),
-    path('admin/', admin.site.urls),
-    path('hello/', hello),
-    path('info-page/', info),
-]
+                  path('', main_page),
+                  path('admin/', admin.site.urls),
+                  path('hello/', hello),
+                  path('info/', InfoView.as_view()),
+                  path('menu/', MenuView.as_view()),
+              ] + router.urls
