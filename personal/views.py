@@ -2,11 +2,10 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.shortcuts import render
 import datetime
-from .models import Category, MenuItem
 
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
-from .serializers import ClientSerializer, RestaurantSerializer, CourierSerializer, RegionSerializer, MenuItemSerializer
-from .models import Client, Restaurant, Courier, Region
+from .serializers import *
+from .models import *
 
 
 class MenuView(TemplateView):
@@ -82,3 +81,13 @@ class RegionViewSet(ReadOnlyModelViewSet):
 class MenuItemViewSet(ReadOnlyModelViewSet):
     serializer_class = MenuItemSerializer
     queryset = MenuItem.objects.all()
+
+
+class OrderViewSet(ReadOnlyModelViewSet):
+    serializer_class = OrderSerializer
+    queryset = Order.objects.all()
+
+
+class CourierOrderViewSet(ReadOnlyModelViewSet):
+    serializer_class = CourierOrderSerializer
+    queryset = Order.objects.all()

@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import hello, InfoView, main_page, MenuView, ClientViewSet, RestaurantViewSet, CourierViewSet, \
-    RegionViewSet, MenuItemViewSet
+from .views import *
 
 from rest_framework import routers
 
@@ -13,6 +12,8 @@ router.register('restaurants', RestaurantViewSet, basename='restaurants')
 router.register('couriers', CourierViewSet, basename='couriers')
 router.register('regions', RegionViewSet, basename='regions')
 router.register('menu_item', MenuItemViewSet, basename='menu_item')
+router.register('order', OrderViewSet, basename='order')
+router.register('courier_order', CourierOrderViewSet, basename='courier_order')
 
 urlpatterns = [
                   path('', main_page),
