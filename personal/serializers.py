@@ -45,7 +45,7 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = ('client', 'restaurant', 'courier', 'created', 'delivery_time', 'delivered_at')
 
 
-class OrdersCourierSerializer(serializers.Serializer):
+class OrdersCourierSerializer(serializers.ModelSerializer):
     client = ClientSerializer()
     restaurant = RestaurantSerializer()
 
