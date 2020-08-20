@@ -68,7 +68,7 @@ class RestaurantViewSet(ReadOnlyModelViewSet):
     queryset = Restaurant.objects.all()
 
 
-class CourierViewSet(ReadOnlyModelViewSet):
+class CourierViewSet(ModelViewSet):
     serializer_class = CourierSerializer
     queryset = Courier.objects.all()
 
@@ -88,6 +88,6 @@ class OrderViewSet(ReadOnlyModelViewSet):
     queryset = Order.objects.all()
 
 
-class CourierOrderViewSet(ReadOnlyModelViewSet):
+class CourierOrderViewSet(ModelViewSet):
     serializer_class = CourierOrderSerializer
     queryset = Order.objects.all()

@@ -15,6 +15,7 @@ router.register('menu_item', MenuItemViewSet, basename='menu_item')
 router.register('order', OrderViewSet, basename='order')
 router.register('courier_order', CourierOrderViewSet, basename='courier_order')
 
+
 urlpatterns = [
                   path('', main_page),
                   path('admin/', admin.site.urls),

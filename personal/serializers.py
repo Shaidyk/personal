@@ -38,7 +38,6 @@ class MenuItemSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     client = ClientSerializer()
     restaurant = RestaurantSerializer()
-    courier = CourierSerializer()
 
     class Meta:
         model = Order
@@ -59,6 +58,6 @@ class CourierOrderSerializer(serializers.ModelSerializer):
     orders = OrdersCourierSerializer(many=True)
 
     class Meta:
-        model = Courier
+        model = Client
         # fields = '__all__'
-        fields = ['orders', 'client']
+        fields = ['orders', 'first_name']
