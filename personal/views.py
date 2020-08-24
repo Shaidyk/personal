@@ -73,7 +73,7 @@ class CourierViewSet(ModelViewSet):
     queryset = Courier.objects.all()
 
 
-class RegionViewSet(ReadOnlyModelViewSet):
+class RegionViewSet(ModelViewSet):
     serializer_class = RegionSerializer
     queryset = Region.objects.all()
 

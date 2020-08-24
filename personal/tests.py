@@ -1,19 +1,16 @@
 from rest_framework.test import APITestCase
-from .models import *
+
+from .serializers import *
 
 
-class SerializerTestCase(APITestCase):
+class CourierSerializerTestCase(APITestCase):
+
     def test_create_courier(self):
         data = {
-            'first_name': 'Courier',
-            'last_name': 'TheBest',
-            'region': '1',
+            'first_name': 'Ivan',
+            'last_name': 'Petrov',
+            'region': 'Odessa',
         }
-
-        response = self.client.post(
-            '/courier/',
-            data=data)
-
+        response = self.client.post('/couriers/', data=data)
         self.assertEqual(response.status_code, 201)
-
-        Client.objects.get(**data)
+        CourierSerializer.objects.get(**data)

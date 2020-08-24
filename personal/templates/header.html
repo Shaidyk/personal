@@ -10,17 +10,23 @@
                 <a class="nav-link" href="/info/"><button type="button" class="btn btn-outline-info btn-lg"> Info </button></a>
                 <a class="nav-link" href="/hello/"><button type="button" class="btn btn-outline-primary btn-lg"> Hello </button></a>
                 <a class="nav-link" href="/menu/"><button type="button" class="btn btn-outline-primary btn-lg"> Menu </button></a>
-                <a class="nav-link" href="/clients/"><button type="button" class="btn btn-outline-primary btn-lg"> Clients </button></a>
-
-                <a class="nav-link" href="/restaurants/"><button type="button" class="btn btn-outline-primary btn-lg"> restaurants </button></a>
-                <a class="nav-link" href="/couriers/"><button type="button" class="btn btn-outline-primary btn-lg"> couriers </button></a>
-                <a class="nav-link" href="/regions/"><button type="button" class="btn btn-outline-primary btn-lg"> regions </button></a>
-                <a class="nav-link" href="/menu_item/"><button type="button" class="btn btn-outline-primary btn-lg"> menu_item </button></a>
-                <a class="nav-link" href="/order/"><button type="button" class="btn btn-outline-primary btn-lg"> order </button></a>
-                <a class="nav-link" href="/courier_order/"><button type="button" class="btn btn-outline-primary btn-lg"> courier_order </button></a>
             </ul>
             <ul class="nav navbar-nav">
                 <form class="form-inline my-2 my-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Serializers
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/clients/">clients</a>
+                            <a class="dropdown-item" href="/couriers/">couriers</a>
+                            <a class="dropdown-item" href="/menu_item/">menu_item</a>
+                            <a class="dropdown-item" href="/order/">order</a>
+                            <a class="dropdown-item" href="/courier_order/">courier_order</a>
+                            <a class="dropdown-item" href="/regions/">regions</a>
+                            <a class="dropdown-item" href="/restaurants/">restaurants</a>
+                        </div>
+                    </div>
                     <a class="nav-link" href="/admin/"><button type="button" class="btn btn-outline-danger btn-lg my-2 my-sm-0"> Admin </button></a>
                 </form>
             </ul>
