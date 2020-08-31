@@ -3,6 +3,10 @@ from django.views.generic import TemplateView
 from django.shortcuts import render
 import datetime
 
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from .serializers import *
 from .models import *
@@ -19,15 +23,13 @@ class MenuView(TemplateView):
 
         for category in categories:
             items = queryset.filter(category=category).order_by('price')
-            result = {
-                'name': category,
-                'items': list(items)
-            }
-            context['menu_items'].append(result)
-
-        # filter_name = request.GET.get("filter")
-        # if filter_name:
-        #     queryset = queryset.filter(name__contains=filter_name)
+            items = list(items)
+            if items != []:
+                result = {
+                    'name': category,
+                    'items': items
+                }
+                context['menu_items'].append(result)
 
         return render(request, self.template_name, context)
 

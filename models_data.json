@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Soup"
+  },
+  {
+    "name": "Salad"
+  },
+  {
+    "name": "Meet"
+  },
+
+
+  {
+    "name": "Menu"
+  },
+
+
+  {
+    "name": "first_menu_item",
+    "price": 10,
+    "category": {
+      "name": "Soup"
+    },
+    "menu": {
+      "name": "Menu_one"
+    }
+  },
+  {
+    "name": "second_menu_item",
+    "price": 7,
+    "category": {
+      "name": "Salad"
+    },
+    "menu": {
+      "name": "Menu_two"
+    }
+  },
+  {
+    "name": "third_menu_item",
+    "price": 14,
+    "category": {
+      "name": "Meet"
+    },
+    "menu": {
+      "name": "Menu_three"
+    }
+  },
+  {
+    "name": "fours_menu_item",
+    "price": 4,
+    "category": {
+      "name": "Meet"
+    },
+    "menu": {
+      "name": "Menu_four"
+    }
+  },
+  {
+    "name": "fives_menu_item",
+    "price": 10,
+    "category": {
+      "name": "Soup"
+    },
+    "menu": {
+      "name": "Menu_one"
+    }
+  }
+]
+

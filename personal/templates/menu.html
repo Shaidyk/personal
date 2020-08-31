@@ -27,13 +27,13 @@
             <tbody>
                 <tr>
                     {% for category in menu_items %}
-                    <tr>
-                        <th></th>
-                        <th scope="row">{{category.name}}</th>
-                    </tr>
+                        <tr >
+                            <th scope="row" class="text-center table-success" colspan="3">{{category.name}}</th>
+                        </tr>
                         {% for menu_item in category.items %}
+
                             <tr class="table">
-                                <th scope="row">{{menu_item.id}}</th>
+                                <th scope="row">{{forloop.counter}}</th>
                                 <th scope="row">{{menu_item.name}}</th>
                                 <th scope="row">{{menu_item.price}}</th>
                             </tr>

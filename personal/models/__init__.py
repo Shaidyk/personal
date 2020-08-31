@@ -6,3 +6,4 @@ from .order import Order
 from .order_item import OrderItem
 from .region import Region
 from .restaurant import Restaurant
+from .menu import Menu

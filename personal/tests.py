@@ -12,5 +12,6 @@ class CourierSerializerTestCase(APITestCase):
             'region': 'Odessa',
         }
         response = self.client.post('/couriers/', data=data)
+        print(response.data)
         self.assertEqual(response.status_code, 201)
         CourierSerializer.objects.get(**data)
