@@ -1,15 +1,15 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.views.generic import TemplateView
 from django.shortcuts import render
 import datetime
 
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
-from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from .serializers import *
 from .models import *
+from .permissions import *
+
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
+from rest_framework.decorators import api_view, permission_classes
 
 
 class MenuView(TemplateView):
@@ -57,6 +57,20 @@ class InfoView(TemplateView):
 
 
 def main_page(request):
+    return render(request, "main.html")
+
+
+def authorization(request):
+    return render(request, "login.html")
+
+
+# @api_view(['GET'])
+# @permission_classes([CanConfirmOrder & CanCompleteOrder])
+def LoginView(request, format=None):
+    return HttpResponseRedirect('/')
+
+
+def login(request):
     return render(request, "main.html")
 
 

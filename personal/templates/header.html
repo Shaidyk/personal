@@ -2,31 +2,32 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="#">Navigation</a>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <a class="nav-link" href="/"><button type="button" class="btn btn-outline-success btn-lg"> Main </button></a>
-                <a class="nav-link" href="/info/"><button type="button" class="btn btn-outline-info btn-lg"> Info </button></a>
-                <a class="nav-link" href="/hello/"><button type="button" class="btn btn-outline-primary btn-lg"> Hello </button></a>
-                <a class="nav-link" href="/menu/"><button type="button" class="btn btn-outline-primary btn-lg"> Menu </button></a>
+            <ul class="navbar-nav mt-2 mt-lg-0">
+                <a class="nav-link " href="/">Home Page</a>
+                <a class="nav-link " href="/menu/">Menu</a>
             </ul>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Serializers
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/clients/">clients</a>
+                    <a class="dropdown-item" href="/couriers/">couriers</a>
+                    <a class="dropdown-item" href="/menu_item/">menu_item</a>
+                    <a class="dropdown-item" href="/order/">order</a>
+                    <a class="dropdown-item" href="/courier_order/">courier_order</a>
+                    <a class="dropdown-item" href="/regions/">regions</a>
+                    <a class="dropdown-item" href="/restaurants/">restaurants</a>
+                </div>
+            </div>
+            <div class="navbar-nav mr-auto mt-2 mt-lg-0"></div>
             <ul class="nav navbar-nav">
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Serializers
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/clients/">clients</a>
-                            <a class="dropdown-item" href="/couriers/">couriers</a>
-                            <a class="dropdown-item" href="/menu_item/">menu_item</a>
-                            <a class="dropdown-item" href="/order/">order</a>
-                            <a class="dropdown-item" href="/courier_order/">courier_order</a>
-                            <a class="dropdown-item" href="/regions/">regions</a>
-                            <a class="dropdown-item" href="/restaurants/">restaurants</a>
-                        </div>
-                    </div>
+                    <a class="nav-link" href="/authorization/"><button type="button" class="btn btn-outline-success btn-lg"> Login </button></a>
                     <a class="nav-link" href="/admin/"><button type="button" class="btn btn-outline-danger btn-lg my-2 my-sm-0"> Admin </button></a>
                 </form>
             </ul>
