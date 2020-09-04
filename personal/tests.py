@@ -9,7 +9,7 @@ class CourierSerializerTestCase(APITestCase):
         data = {
             'first_name': 'Ivan',
             'last_name': 'Petrov',
-            'region': 'Odessa',
+            'region': {'name': 'Odessa'},
         }
         response = self.client.post('/couriers/', data=data)
         print(response.data)
