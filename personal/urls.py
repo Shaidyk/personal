@@ -19,7 +19,6 @@ router.register('courier_order', CourierOrderViewSet, basename='courier_order')
 urlpatterns = [
                 path('', main_page),
                 path('admin/', admin.site.urls),
-                path('hello/', hello),
                 path('info/', InfoView.as_view()),
                 path('menu/', MenuView.as_view()),
                 path('authorization/', authorization),
